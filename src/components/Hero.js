@@ -1,52 +1,68 @@
 function Hero() {
 
-const mobile = window.innerWidth < 768
+const mobile = window.innerWidth < 768;
 
 return (
 
 <section
 style={{
 
-display:"grid",
+display:"flex",
 
-gridTemplateColumns:
+flexDirection:
 
 mobile
 
 ?
 
-"1fr"
+"column"
 
 :
 
-"1fr 1fr",
+"row",
 
 alignItems:"center",
 
-gap:"50px",
+justifyContent:"space-between",
 
-minHeight:"80vh",
+padding:
 
-padding:"60px 10%",
+mobile
 
-overflow:"hidden"
+?
+
+"40px 25px"
+
+:
+
+"80px 10%",
+
+gap:"40px",
+
+minHeight:"80vh"
 
 }}
 
 >
-
-{/* LEFT */}
 
 <div>
 
 <p
 style={{
 
-color:"#7c3aed",
+color:"#8b5cf6",
 
-fontSize:"28px",
+fontSize:
 
-marginBottom:"20px"
+mobile
+
+?
+
+"20px"
+
+:
+
+"28px"
 
 }}
 
@@ -66,15 +82,17 @@ mobile
 
 ?
 
-"72px"
+"58px"
 
 :
 
-"120px",
+"110px",
+
+lineHeight:"1",
 
 fontWeight:"900",
 
-lineHeight:"1"
+marginTop:"20px"
 
 }}
 
@@ -86,10 +104,25 @@ Engineering
 
 Projects
 
-<br/>
+</h1>
 
-<span
+
+<h2
 style={{
+
+marginTop:"20px",
+
+fontSize:
+
+mobile
+
+?
+
+"48px"
+
+:
+
+"90px",
 
 background:
 
@@ -107,9 +140,7 @@ color:"transparent"
 
 For Every Year
 
-</span>
-
-</h1>
+</h2>
 
 
 <p
@@ -117,19 +148,39 @@ style={{
 
 marginTop:"30px",
 
-fontSize:"28px",
+color:"#9ca3af",
 
-color:"#9ca3af"
+fontSize:
+
+mobile
+
+?
+
+"22px"
+
+:
+
+"30px",
+
+lineHeight:"1.8"
 
 }}
 
 >
 
-Mini Projects • Source Code
+Mini Projects
 
 <br/>
 
-Documentation • PPT
+Source Code
+
+<br/>
+
+Documentation
+
+<br/>
+
+PPT
 
 </p>
 
@@ -137,21 +188,21 @@ Documentation • PPT
 <button
 style={{
 
-marginTop:"40px",
+marginTop:"35px",
 
 padding:"18px 35px",
-
-background:
-
-"linear-gradient(90deg,#2563eb,#8b5cf6)",
 
 border:"none",
 
 borderRadius:"18px",
 
+background:
+
+"linear-gradient(90deg,#2563eb,#8b5cf6)",
+
 color:"white",
 
-fontSize:"18px"
+fontSize:"20px"
 
 }}
 
@@ -165,18 +216,7 @@ View Projects
 
 
 
-{/* RIGHT */}
-
-<div
-style={{
-
-display:"flex",
-
-justifyContent:"center"
-
-}}
-
->
+<div>
 
 <div
 style={{
@@ -187,11 +227,11 @@ mobile
 
 ?
 
-"300px"
+"280px"
 
 :
 
-"600px",
+"520px",
 
 height:
 
@@ -199,17 +239,21 @@ mobile
 
 ?
 
-"350px"
+"280px"
 
 :
 
-"450px",
+"420px",
+
+borderRadius:"40px",
 
 background:
 
 "linear-gradient(135deg,#2563eb,#8b5cf6)",
 
-borderRadius:"40px",
+boxShadow:
+
+"0 0 100px rgba(79,70,229,.45)",
 
 display:"flex",
 
@@ -223,17 +267,11 @@ mobile
 
 ?
 
-"100px"
+"110px"
 
 :
 
-"180px",
-
-boxShadow:
-
-"0 0 120px rgba(79,70,229,.5)",
-
-maxWidth:"100%"
+"180px"
 
 }}
 
@@ -244,7 +282,6 @@ maxWidth:"100%"
 </div>
 
 </div>
-
 
 </section>
 
