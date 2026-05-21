@@ -1,140 +1,220 @@
 function Pricing(){
 
+const mobile = window.innerWidth < 768
+
+const plans=[
+
+{
+name:"Basic",
+price:"₹4999"
+},
+
+{
+name:"Standard",
+price:"₹9999"
+},
+
+{
+name:"Premium",
+price:"₹14999"
+}
+
+]
+
 return(
 
 <section
-id="pricing"
-
 style={{
 
-padding:"100px",
+padding:"80px 8%",
 
-color:"white"
+color:"white",
 
-}}>
+minHeight:"100vh"
+
+}}
+
+>
 
 <h1
 style={{
 
-fontSize:"60px",
+fontSize:
 
-marginBottom:"40px"
+mobile
 
-}}>
+?
+
+"58px"
+
+:
+
+"90px",
+
+marginBottom:"50px"
+
+}}
+
+>
 
 Pricing
 
 </h1>
 
-<div
-style={{
-
-display:"flex",
-
-gap:"25px"
-
-}}>
-
-<div
-style={{
-
-background:"#111827",
-
-padding:"40px",
-
-borderRadius:"25px"
-
-}}>
-
-<h2>
-
-Basic
-
-</h2>
-
-<h1>
-
-₹4999
-
-</h1>
-
-</div>
 
 
 <div
 style={{
+
+display:"grid",
+
+gridTemplateColumns:
+
+mobile
+
+?
+
+"1fr"
+
+:
+
+"repeat(3,1fr)",
+
+gap:"30px"
+
+}}
+
+>
+
+{
+
+plans.map(
+
+(x)=>(
+
+<div
+
+key={x.name}
+
+style={{
+
+padding:"50px",
+
+borderRadius:"35px",
 
 background:
 
-"linear-gradient(135deg,#2563eb,#7c3aed)",
+"linear-gradient(135deg,#111827,#3b82f6,#8b5cf6)",
 
-padding:"40px",
+boxShadow:
 
-borderRadius:"25px"
+"0 0 60px rgba(99,102,241,.35)",
 
-}}>
+textAlign:"center"
 
-<h2>
+}}
 
-Standard
+>
 
-</h2>
-
-<h1>
-
-₹9999
-
-</h1>
-
-</div>
-
-
-<div
+<h2
 style={{
 
-background:"#111827",
+fontSize:"40px"
 
-padding:"40px",
+}}
 
-borderRadius:"25px"
+>
 
-}}>
-
-<h2>
-
-Premium
+{x.name}
 
 </h2>
 
-<h1>
 
-₹14999
+<br/>
+
+
+<h1
+style={{
+
+fontSize:
+
+mobile
+
+?
+
+"62px"
+
+:
+
+"80px"
+
+}}
+
+>
+
+{x.price}
 
 </h1>
 
-</div>
+
+<br/>
+
+<p>
+
+✔ Source Code
+
+<br/>
+
+✔ Report
+
+<br/>
+
+✔ PPT
+
+<br/>
+
+✔ Support
+
+</p>
+
 
 </div>
 
-<br/>
-<br/>
+)
+
+)
+
+}
+
+</div>
+
 
 <p
 style={{
 
+marginTop:"60px",
+
 textAlign:"center",
 
-color:"#94a3b8",
+color:"#9ca3af",
 
-fontSize:"14px"
+fontSize:"20px"
 
-}}>
+}}
+
+>
 
 * Terms & Conditions Apply
 
 <br/>
 
-Pricing may vary based on project complexity, technology stack, documentation requirements, customization and support.
+Pricing may vary based on project complexity,
+
+technology stack,
+
+documentation requirements,
+
+customization and support.
 
 </p>
 

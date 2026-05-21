@@ -1,10 +1,6 @@
-import { useNavigate } from "react-router-dom";
-
 function Hero() {
 
-const navigate = useNavigate();
-
-return (
+return(
 
 <section
 style={{
@@ -42,7 +38,7 @@ background:"#2563eb",
 
 filter:"blur(180px)",
 
-opacity:"0.35",
+opacity:"0.30",
 
 borderRadius:"50%",
 
@@ -52,6 +48,7 @@ left:"-150px"
 
 }}
 />
+
 
 <div
 style={{
@@ -78,12 +75,13 @@ right:"-120px"
 />
 
 
+
 <div
 style={{
 
-zIndex:"2",
+maxWidth:"900px",
 
-maxWidth:"900px"
+zIndex:"2"
 
 }}
 
@@ -107,6 +105,7 @@ PROJECT HUB
 </p>
 
 
+
 <h1
 style={{
 
@@ -116,7 +115,7 @@ window.innerWidth<768
 
 ?
 
-"60px"
+"58px"
 
 :
 
@@ -162,9 +161,19 @@ For Every Year
 <p
 style={{
 
-marginTop:"30px",
+marginTop:"35px",
 
-fontSize:"24px",
+fontSize:
+
+window.innerWidth<768
+
+?
+
+"20px"
+
+:
+
+"28px",
 
 color:"#9ca3af",
 
@@ -184,111 +193,22 @@ Source Code • PPT • Documentation
 
 
 
-<div
+<p
 style={{
 
-display:"flex",
+marginTop:"60px",
 
-justifyContent:"center",
+fontSize:"22px",
 
-gap:"20px",
-
-marginTop:"50px",
-
-flexWrap:"wrap"
+color:"#7c83a5"
 
 }}
 
 >
 
-<button
+Explore Projects • Pricing • Contact
 
-onClick={()=>navigate("/projects")}
-
-style={{
-
-padding:"18px 38px",
-
-background:
-
-"linear-gradient(90deg,#2563eb,#8b5cf6)",
-
-border:"none",
-
-borderRadius:"18px",
-
-color:"white",
-
-fontSize:"18px"
-
-}}
-
->
-
-View Projects
-
-</button>
-
-
-
-<button
-
-onClick={()=>navigate("/pricing")}
-
-style={{
-
-padding:"18px 38px",
-
-background:
-
-"linear-gradient(90deg,#ec4899,#8b5cf6)",
-
-border:"none",
-
-borderRadius:"18px",
-
-color:"white",
-
-fontSize:"18px"
-
-}}
-
->
-
-View Pricing
-
-</button>
-
-
-
-<button
-
-onClick={()=>navigate("/contact")}
-
-style={{
-
-padding:"18px 38px",
-
-background:"transparent",
-
-border:"1px solid #8b5cf6",
-
-borderRadius:"18px",
-
-color:"white",
-
-fontSize:"18px"
-
-}}
-
->
-
-Contact Now
-
-</button>
-
-
-</div>
+</p>
 
 </div>
 
