@@ -1,7 +1,5 @@
 function Hero() {
 
-const mobile = window.innerWidth < 768;
-
 return (
 
 <section
@@ -9,60 +7,28 @@ style={{
 
 display:"flex",
 
-flexDirection:
+flexDirection:"column",
 
-mobile
-
-?
-
-"column"
-
-:
-
-"row",
+justifyContent:"center",
 
 alignItems:"center",
 
-justifyContent:"space-between",
+textAlign:"center",
 
-padding:
+minHeight:"85vh",
 
-mobile
-
-?
-
-"40px 25px"
-
-:
-
-"80px 10%",
-
-gap:"40px",
-
-minHeight:"80vh"
+padding:"40px"
 
 }}
 
 >
-
-<div>
 
 <p
 style={{
 
 color:"#8b5cf6",
 
-fontSize:
-
-mobile
-
-?
-
-"20px"
-
-:
-
-"28px"
+fontSize:"22px"
 
 }}
 
@@ -73,12 +39,13 @@ PROJECT HUB
 </p>
 
 
+
 <h1
 style={{
 
 fontSize:
 
-mobile
+window.innerWidth<768
 
 ?
 
@@ -89,8 +56,6 @@ mobile
 "110px",
 
 lineHeight:"1",
-
-fontWeight:"900",
 
 marginTop:"20px"
 
@@ -107,22 +72,23 @@ Projects
 </h1>
 
 
+
 <h2
 style={{
 
-marginTop:"20px",
+marginTop:"15px",
 
 fontSize:
 
-mobile
+window.innerWidth<768
 
 ?
 
-"48px"
+"44px"
 
 :
 
-"90px",
+"85px",
 
 background:
 
@@ -143,66 +109,51 @@ For Every Year
 </h2>
 
 
+
 <p
 style={{
 
-marginTop:"30px",
+marginTop:"25px",
 
 color:"#9ca3af",
 
-fontSize:
-
-mobile
-
-?
-
-"22px"
-
-:
-
-"30px",
-
-lineHeight:"1.8"
+fontSize:"22px"
 
 }}
 
 >
 
-Mini Projects
-
-<br/>
-
-Source Code
-
-<br/>
-
-Documentation
-
-<br/>
-
-PPT
+Mini Projects • Source Code
 
 </p>
 
 
+
 <button
+
+onClick={()=>{
+
+window.location.href="#projects"
+
+}}
+
 style={{
 
-marginTop:"35px",
+marginTop:"40px",
 
-padding:"18px 35px",
-
-border:"none",
-
-borderRadius:"18px",
+padding:"20px 45px",
 
 background:
 
 "linear-gradient(90deg,#2563eb,#8b5cf6)",
 
+border:"none",
+
+borderRadius:"20px",
+
 color:"white",
 
-fontSize:"20px"
+fontSize:"22px"
 
 }}
 
@@ -211,77 +162,6 @@ fontSize:"20px"
 View Projects
 
 </button>
-
-</div>
-
-
-
-<div>
-
-<div
-style={{
-
-width:
-
-mobile
-
-?
-
-"280px"
-
-:
-
-"520px",
-
-height:
-
-mobile
-
-?
-
-"280px"
-
-:
-
-"420px",
-
-borderRadius:"40px",
-
-background:
-
-"linear-gradient(135deg,#2563eb,#8b5cf6)",
-
-boxShadow:
-
-"0 0 100px rgba(79,70,229,.45)",
-
-display:"flex",
-
-justifyContent:"center",
-
-alignItems:"center",
-
-fontSize:
-
-mobile
-
-?
-
-"110px"
-
-:
-
-"180px"
-
-}}
-
->
-
-💻
-
-</div>
-
-</div>
 
 </section>
 
