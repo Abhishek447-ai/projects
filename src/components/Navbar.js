@@ -1,34 +1,104 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
 
-const Navbar = () => {
+function Navbar(){
 
-const [open,setOpen]=useState(false);
+const mobile = window.innerWidth < 768;
 
-return (
-
-<>
+return(
 
 <nav
 style={{
 
 display:"flex",
 
+flexDirection:
+
+mobile
+
+?
+
+"column"
+
+:
+
+"row",
+
 justifyContent:"space-between",
 
 alignItems:"center",
 
-padding:"30px 10%"
+padding:
 
-}}>
+mobile
+
+?
+
+"20px"
+
+:
+
+"25px 8%",
+
+gap:
+
+mobile
+
+?
+
+"20px"
+
+:
+
+"0",
+
+position:"sticky",
+
+top:"0",
+
+zIndex:"999",
+
+background:
+
+"rgba(10,15,40,.45)",
+
+backdropFilter:"blur(20px)",
+
+borderBottom:
+
+"1px solid rgba(255,255,255,.08)"
+
+}}
+
+>
 
 <h1
 style={{
 
-fontSize:"42px",
+fontSize:
 
-color:"#7c3aed"
+mobile
 
-}}>
+?
+
+"42px"
+
+:
+
+"58px",
+
+background:
+
+"linear-gradient(90deg,#2563eb,#8b5cf6)",
+
+WebkitBackgroundClip:"text",
+
+color:"transparent",
+
+fontWeight:"900"
+
+}}
+
+>
 
 ProjectHub
 
@@ -40,290 +110,125 @@ style={{
 
 display:"flex",
 
-gap:"30px",
+flexWrap:"wrap",
 
-alignItems:"center"
+justifyContent:"center",
 
-}}>
-
-<a
-href="#projects"
-style={{
-
-color:"white",
-
-textDecoration:"none"
-
-}}>
-
-Projects
-
-</a>
-
-
-<a
-href="#pricing"
-
-style={{
-
-color:"white",
-
-textDecoration:"none",
-
-cursor:"pointer"
+gap:"14px"
 
 }}
 
 >
-
-Pricing
-
-</a>
-
-<button
-
-onClick={()=>{
-
-setOpen(true)
-
-}}
-
-style={{
-
-padding:"16px 28px",
-
-background:
-
-"linear-gradient(90deg,#2563eb,#7c3aed)",
-
-border:"none",
-
-borderRadius:"16px",
-
-color:"white",
-
-cursor:"pointer"
-
-}}
-
->
-
-Contact
-
-</button>
-
-</div>
-
-</nav>
-
 
 {
 
-open && (
+[
 
-<div
+["/","Home"],
+
+["/projects","Projects"],
+
+["/pricing","Pricing"]
+
+].map(
+
+([path,name])=>(
+
+<Link
+
+key={name}
+
+to={path}
+
 style={{
 
-position:"fixed",
+padding:
 
-top:0,
+mobile
 
-left:0,
+?
 
-right:0,
+"12px 18px"
 
-bottom:0,
+:
+
+"14px 24px",
+
+borderRadius:"16px",
 
 background:
 
-"rgba(0,0,0,.7)",
-
-display:"flex",
-
-justifyContent:"center",
-
-alignItems:"center",
-
-zIndex:999
-
-}}
-
->
-
-<div
-style={{
-
-background:"#111827",
-
-padding:"50px",
-
-borderRadius:"30px",
-
-width:"420px",
-
-textAlign:"center",
-
-color:"white"
-
-}}
-
->
-
-<h1>
-
-Contact Us
-
-</h1>
-
-<br/>
-
-<p
-style={{
-
-color:"#9ca3af"
-
-}}>
-
-Click below for communication
-
-</p>
-
-<br/>
-
-
-<a
-
-href="mailto:risingsunprojects1@gmail.com"
-
-style={{
-
-display:"flex",
-
-justifyContent:"center",
-
-alignItems:"center",
-
-gap:"15px",
-
-padding:"18px",
-
-background:"#1e293b",
-
-borderRadius:"18px",
-
-textDecoration:"none",
+"rgba(255,255,255,.05)",
 
 color:"white",
 
-marginBottom:"20px"
+boxShadow:
+
+"0 0 25px rgba(99,102,241,.25)"
 
 }}
 
 >
 
-📧
+{name}
 
-<span>
-
-Email Us
-
-</span>
-
-</a>
-
-
-
-<button
-
-onClick={()=>{
-
-window.open(
-
-"https://wa.me/919535554218"
+</Link>
 
 )
-
-}}
-
-style={{
-
-display:"flex",
-
-justifyContent:"center",
-
-alignItems:"center",
-
-gap:"15px",
-
-width:"100%",
-
-padding:"18px",
-
-background:"#25D366",
-
-border:"none",
-
-borderRadius:"18px",
-
-color:"white",
-
-fontSize:"18px"
-
-}}
-
->
-
-🟢
-
-<span>
-
-Chat on WhatsApp
-
-</span>
-
-</button>
-
-<br/>
-
-
-<button
-
-onClick={()=>{
-
-setOpen(false)
-
-}}
-
-style={{
-
-padding:"16px",
-
-width:"100%",
-
-border:"none",
-
-borderRadius:"18px"
-
-}}
-
->
-
-Close
-
-</button>
-
-</div>
-
-</div>
 
 )
 
 }
 
-</>
 
-);
 
-};
+<Link to="/contact">
 
-export default Navbar;
+<button
+style={{
+
+padding:
+
+mobile
+
+?
+
+"12px 20px"
+
+:
+
+"16px 32px",
+
+border:"none",
+
+borderRadius:"18px",
+
+background:
+
+"linear-gradient(90deg,#2563eb,#8b5cf6)",
+
+color:"white",
+
+boxShadow:
+
+"0 0 40px rgba(99,102,241,.6)"
+
+}}
+
+>
+
+✨ Contact
+
+</button>
+
+</Link>
+
+</div>
+
+</nav>
+
+)
+
+}
+
+export default Navbar

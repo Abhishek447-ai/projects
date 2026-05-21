@@ -1,13 +1,17 @@
+import { useNavigate } from "react-router-dom";
+
 function Hero() {
+
+const navigate = useNavigate();
 
 return (
 
 <section
 style={{
 
-display:"flex",
+minHeight:"85vh",
 
-flexDirection:"column",
+display:"flex",
 
 justifyContent:"center",
 
@@ -15,9 +19,71 @@ alignItems:"center",
 
 textAlign:"center",
 
-minHeight:"85vh",
+padding:"40px",
 
-padding:"40px"
+position:"relative",
+
+overflow:"hidden"
+
+}}
+
+>
+
+<div
+style={{
+
+position:"absolute",
+
+width:"500px",
+
+height:"500px",
+
+background:"#2563eb",
+
+filter:"blur(180px)",
+
+opacity:"0.35",
+
+borderRadius:"50%",
+
+top:"-150px",
+
+left:"-150px"
+
+}}
+/>
+
+<div
+style={{
+
+position:"absolute",
+
+width:"450px",
+
+height:"450px",
+
+background:"#8b5cf6",
+
+filter:"blur(180px)",
+
+opacity:"0.25",
+
+borderRadius:"50%",
+
+bottom:"-120px",
+
+right:"-120px"
+
+}}
+/>
+
+
+<div
+style={{
+
+zIndex:"2",
+
+maxWidth:"900px"
 
 }}
 
@@ -26,9 +92,11 @@ padding:"40px"
 <p
 style={{
 
+fontSize:"22px",
+
 color:"#8b5cf6",
 
-fontSize:"22px"
+letterSpacing:"4px"
 
 }}
 
@@ -37,7 +105,6 @@ fontSize:"22px"
 PROJECT HUB
 
 </p>
-
 
 
 <h1
@@ -49,13 +116,15 @@ window.innerWidth<768
 
 ?
 
-"58px"
+"60px"
 
 :
 
-"110px",
+"95px",
 
 lineHeight:"1",
+
+fontWeight:"900",
 
 marginTop:"20px"
 
@@ -63,40 +132,18 @@ marginTop:"20px"
 
 >
 
-Engineering
+Engineering Projects
 
 <br/>
 
-Projects
-
-</h1>
-
-
-
-<h2
+<span
 style={{
-
-marginTop:"15px",
-
-fontSize:
-
-window.innerWidth<768
-
-?
-
-"44px"
-
-:
-
-"85px",
 
 background:
 
 "linear-gradient(90deg,#2563eb,#8b5cf6)",
 
-WebkitBackgroundClip:
-
-"text",
+WebkitBackgroundClip:"text",
 
 color:"transparent"
 
@@ -106,42 +153,61 @@ color:"transparent"
 
 For Every Year
 
-</h2>
+</span>
+
+</h1>
 
 
 
 <p
 style={{
 
-marginTop:"25px",
+marginTop:"30px",
+
+fontSize:"24px",
 
 color:"#9ca3af",
 
-fontSize:"22px"
+lineHeight:"1.8"
 
 }}
 
 >
 
-Mini Projects • Source Code
+Mini Projects • Final Year
+
+<br/>
+
+Source Code • PPT • Documentation
 
 </p>
 
 
 
-<button
+<div
+style={{
 
-onClick={()=>{
+display:"flex",
 
-window.location.href="#projects"
+justifyContent:"center",
+
+gap:"20px",
+
+marginTop:"50px",
+
+flexWrap:"wrap"
 
 }}
 
+>
+
+<button
+
+onClick={()=>navigate("/projects")}
+
 style={{
 
-marginTop:"40px",
-
-padding:"20px 45px",
+padding:"18px 38px",
 
 background:
 
@@ -149,11 +215,11 @@ background:
 
 border:"none",
 
-borderRadius:"20px",
+borderRadius:"18px",
 
 color:"white",
 
-fontSize:"22px"
+fontSize:"18px"
 
 }}
 
@@ -162,6 +228,69 @@ fontSize:"22px"
 View Projects
 
 </button>
+
+
+
+<button
+
+onClick={()=>navigate("/pricing")}
+
+style={{
+
+padding:"18px 38px",
+
+background:
+
+"linear-gradient(90deg,#ec4899,#8b5cf6)",
+
+border:"none",
+
+borderRadius:"18px",
+
+color:"white",
+
+fontSize:"18px"
+
+}}
+
+>
+
+View Pricing
+
+</button>
+
+
+
+<button
+
+onClick={()=>navigate("/contact")}
+
+style={{
+
+padding:"18px 38px",
+
+background:"transparent",
+
+border:"1px solid #8b5cf6",
+
+borderRadius:"18px",
+
+color:"white",
+
+fontSize:"18px"
+
+}}
+
+>
+
+Contact Now
+
+</button>
+
+
+</div>
+
+</div>
 
 </section>
 

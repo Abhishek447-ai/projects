@@ -2,21 +2,21 @@ function Projects(){
 
 const projects=[
 
-"Student Performance Prediction",
-
 "AI Resume Screening",
 
-"College Enquiry Chatbot",
-
-"Attendance Management",
-
-"Expense Tracker",
+"Student Performance Prediction",
 
 "Online Voting System",
 
 "Library Management",
 
+"Attendance Management",
+
 "Weather Prediction",
+
+"Expense Tracker",
+
+"College Chatbot",
 
 "Placement Management"
 
@@ -25,28 +25,43 @@ const projects=[
 return(
 
 <section
-id="projects"
-
 style={{
 
-padding:"100px",
+padding:"80px 8%",
 
-color:"white"
+color:"white",
 
-}}>
+minHeight:"100vh"
+
+}}
+
+>
 
 <h1
 style={{
 
 fontSize:"60px",
 
-marginBottom:"50px"
+textAlign:"center",
 
-}}>
+marginBottom:"60px",
+
+background:
+
+"linear-gradient(90deg,#2563eb,#8b5cf6)",
+
+WebkitBackgroundClip:"text",
+
+color:"transparent"
+
+}}
+
+>
 
 Featured Projects
 
 </h1>
+
 
 
 <div
@@ -56,11 +71,21 @@ display:"grid",
 
 gridTemplateColumns:
 
+window.innerWidth<768
+
+?
+
+"1fr"
+
+:
+
 "repeat(3,1fr)",
 
-gap:"25px"
+gap:"30px"
 
-}}>
+}}
+
+>
 
 {
 
@@ -76,21 +101,35 @@ style={{
 
 background:
 
-"linear-gradient(135deg,#111827,#1e293b)",
+"rgba(255,255,255,.04)",
 
-padding:"35px",
+backdropFilter:
+
+"blur(20px)",
+
+padding:"40px",
 
 borderRadius:"25px",
 
+border:
+
+"1px solid rgba(255,255,255,.08)",
+
+boxShadow:
+
+"0 0 40px rgba(99,102,241,.18)",
+
 fontSize:"22px",
 
-transition:"0.3s",
-
-cursor:"pointer"
+textAlign:"center"
 
 }}
 
 >
+
+🚀
+
+<br/><br/>
 
 {x}
 
@@ -104,12 +143,11 @@ cursor:"pointer"
 
 </div>
 
+
 </section>
 
 )
 
 }
 
-
-
-export default Projects 
+export default Projects
