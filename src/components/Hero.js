@@ -1,44 +1,84 @@
-function Hero(){
+function Hero() {
 
-return(
+const mobile = window.innerWidth < 768
+
+return (
 
 <section
 style={{
 
-display:"flex",
+display:"grid",
 
-minHeight:"90vh",
+gridTemplateColumns:
 
-alignItems:"center"
+mobile
 
-}}>
+?
 
-<div
-style={{
+"1fr"
 
-flex:1
+:
 
-}}>
+"1fr 1fr",
+
+alignItems:"center",
+
+gap:"50px",
+
+minHeight:"80vh",
+
+padding:"60px 10%",
+
+overflow:"hidden"
+
+}}
+
+>
+
+{/* LEFT */}
+
+<div>
 
 <p
 style={{
 
-color:"#7c3aed"
+color:"#7c3aed",
 
-}}>
+fontSize:"28px",
+
+marginBottom:"20px"
+
+}}
+
+>
 
 PROJECT HUB
 
 </p>
 
+
 <h1
 style={{
 
-fontSize:"90px",
+fontSize:
 
-lineHeight:"95px"
+mobile
 
-}}>
+?
+
+"72px"
+
+:
+
+"120px",
+
+fontWeight:"900",
+
+lineHeight:"1"
+
+}}
+
+>
 
 Engineering
 
@@ -53,13 +93,17 @@ style={{
 
 background:
 
-"linear-gradient(90deg,#2563eb,#7c3aed)",
+"linear-gradient(90deg,#2563eb,#8b5cf6)",
 
-WebkitBackgroundClip:"text",
+WebkitBackgroundClip:
+
+"text",
 
 color:"transparent"
 
-}}>
+}}
+
+>
 
 For Every Year
 
@@ -67,67 +111,47 @@ For Every Year
 
 </h1>
 
+
 <p
 style={{
 
-marginTop:30,
+marginTop:"30px",
 
-color:"#94a3b8",
+fontSize:"28px",
 
-fontSize:22
-
-}}>
-
-Mini Projects
-
-•
-
-Source Code
-
-•
-
-Documentation
-
-•
-
-PPT
-
-</p>
-
-<div
-style={{
-
-marginTop:40
-
-}}>
-
-<button
-
-onClick={()=>{
-
-window.scrollTo({
-
-top:700,
-
-behavior:"smooth"
-
-})
+color:"#9ca3af"
 
 }}
 
+>
+
+Mini Projects • Source Code
+
+<br/>
+
+Documentation • PPT
+
+</p>
+
+
+<button
 style={{
 
-padding:"18px 34px",
+marginTop:"40px",
 
-border:"none",
-
-borderRadius:"16px",
+padding:"18px 35px",
 
 background:
 
-"linear-gradient(90deg,#2563eb,#7c3aed)",
+"linear-gradient(90deg,#2563eb,#8b5cf6)",
 
-color:"white"
+border:"none",
+
+borderRadius:"18px",
+
+color:"white",
+
+fontSize:"18px"
 
 }}
 
@@ -139,32 +163,53 @@ View Projects
 
 </div>
 
-</div>
 
+
+{/* RIGHT */}
 
 <div
 style={{
-
-flex:1,
 
 display:"flex",
 
 justifyContent:"center"
 
-}}>
+}}
+
+>
 
 <div
 style={{
 
-width:520,
+width:
 
-height:360,
+mobile
 
-borderRadius:35,
+?
+
+"300px"
+
+:
+
+"600px",
+
+height:
+
+mobile
+
+?
+
+"350px"
+
+:
+
+"450px",
 
 background:
 
-"linear-gradient(135deg,#2563eb,#7c3aed)",
+"linear-gradient(135deg,#2563eb,#8b5cf6)",
+
+borderRadius:"40px",
 
 display:"flex",
 
@@ -172,11 +217,23 @@ justifyContent:"center",
 
 alignItems:"center",
 
-fontSize:140,
+fontSize:
+
+mobile
+
+?
+
+"100px"
+
+:
+
+"180px",
 
 boxShadow:
 
-"0 0 120px #4f46e5"
+"0 0 120px rgba(79,70,229,.5)",
+
+maxWidth:"100%"
 
 }}
 
@@ -187,6 +244,7 @@ boxShadow:
 </div>
 
 </div>
+
 
 </section>
 
