@@ -1,14 +1,14 @@
 import { motion } from "framer-motion"
 
-function Hero() {
+function Hero(){
 
-return (
+return(
 
 <section
+
 style={{
+
 minHeight:"100vh",
-paddingTop:"180px",
-position:"relative",
 
 background:
 "linear-gradient(135deg,#000814,#020617,#03045e)",
@@ -19,18 +19,22 @@ display:"flex",
 
 alignItems:"center",
 
-justifyContent:"center"
+justifyContent:"center",
+
+padding:"120px 20px 60px",
+
+position:"relative"
+
 }}
+
 >
 
-
-{/* MOVING BLOBS */}
 
 <motion.div
 
 animate={{
-x:[0,300,-200,0],
-y:[0,-150,150,0]
+x:[0,250,-200,0],
+y:[0,-150,100,0]
 }}
 
 transition={{
@@ -42,16 +46,20 @@ style={{
 
 position:"absolute",
 
-width:"700px",
+width:"70vw",
 
-height:"700px",
+height:"70vw",
+
+maxWidth:"700px",
+
+maxHeight:"700px",
 
 borderRadius:"50%",
 
 background:
 "radial-gradient(circle,#2563eb,transparent)",
 
-filter:"blur(150px)",
+filter:"blur(130px)",
 
 opacity:.45
 
@@ -59,11 +67,11 @@ opacity:.45
 />
 
 
+
 <motion.div
 
 animate={{
-x:[0,-250,200,0],
-y:[0,250,-150,0]
+x:[0,-200,250,0]
 }}
 
 transition={{
@@ -75,69 +83,61 @@ style={{
 
 position:"absolute",
 
-width:"600px",
+width:"60vw",
 
-height:"600px",
+height:"60vw",
+
+maxWidth:"600px",
+
+maxHeight:"600px",
 
 borderRadius:"50%",
 
 background:
 "radial-gradient(circle,#9333ea,transparent)",
 
-filter:"blur(140px)",
+filter:"blur(130px)",
 
-opacity:.4
+opacity:.35
 
 }}
 />
 
 
 
-<motion.div
-
-initial={{
-opacity:0,
-y:80
-}}
-
-animate={{
-opacity:1,
-y:0
-}}
-
-transition={{
-duration:1.5
-}}
+<div
 
 style={{
-zIndex:2,
-textAlign:"center"
+
+textAlign:"center",
+
+zIndex:10,
+
+maxWidth:"900px"
+
 }}
 
 >
-
-
 
 <h1
 
 style={{
 
-fontSize:"clamp(60px,10vw,140px)",
+fontSize:
+"clamp(58px,15vw,150px)",
 
-lineHeight:"1",
-
-marginBottom:"40px",
+lineHeight:"0.95",
 
 fontWeight:"900",
+
+marginBottom:"30px",
 
 background:
 "linear-gradient(90deg,#2563eb,#9333ea)",
 
 WebkitBackgroundClip:"text",
 
-color:"transparent",
-
-textAlign:"center"
+color:"transparent"
 
 }}
 
@@ -151,49 +151,62 @@ Projects
 
 
 <p
+
 style={{
 
-color:"#94a3b8",
+fontSize:
+"clamp(18px,4vw,28px)",
 
-fontSize:"22px",
+color:"#9ca3af",
 
-maxWidth:"900px",
+lineHeight:"1.8",
 
-margin:"auto",
-
-lineHeight:"1.8"
+padding:"0 10px"
 
 }}
 
-
 >
 
-Mini Projects • Final Year • Source Code • PPT
+Mini Projects • Final Year
+<br/>
+
+Source Code • PPT
 
 </p>
 
 
+
 <div
+
 style={{
-marginTop:"80px",
 
 display:"flex",
 
-gap:"25px",
+justifyContent:"center",
 
-justifyContent:"center"
+gap:"18px",
+
+flexWrap:"wrap",
+
+marginTop:"50px"
+
 }}
+
 >
 
 <button
 
+style={btn1}
+
 onClick={()=>
+
 document
 .getElementById("projects")
-.scrollIntoView()
-}
+.scrollIntoView({
+behavior:"smooth"
+})
 
-style={btn1}
+}
 
 >
 
@@ -204,13 +217,17 @@ View Projects
 
 <button
 
+style={btn2}
+
 onClick={()=>
+
 document
 .getElementById("contact")
-.scrollIntoView()
-}
+.scrollIntoView({
+behavior:"smooth"
+})
 
-style={btn2}
+}
 
 >
 
@@ -220,7 +237,7 @@ Contact
 
 </div>
 
-</motion.div>
+</div>
 
 </section>
 
@@ -228,15 +245,16 @@ Contact
 
 }
 
+
 const btn1={
 
-padding:"20px 45px",
+padding:"18px 34px",
 
 border:"none",
 
-borderRadius:"18px",
+borderRadius:"20px",
 
-fontSize:"20px",
+fontSize:"18px",
 
 background:
 "linear-gradient(90deg,#2563eb,#9333ea)",
@@ -244,23 +262,27 @@ background:
 color:"white",
 
 cursor:"pointer"
+
 }
+
 
 const btn2={
 
-padding:"20px 45px",
+padding:"18px 34px",
+
+borderRadius:"20px",
+
+fontSize:"18px",
 
 border:"1px solid #7c3aed",
-
-borderRadius:"18px",
-
-fontSize:"20px",
 
 background:"transparent",
 
 color:"white",
 
 cursor:"pointer"
+
 }
+
 
 export default Hero
