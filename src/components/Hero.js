@@ -1,221 +1,266 @@
+import { motion } from "framer-motion"
+
 function Hero() {
 
-return(
+return (
 
 <section
 style={{
+minHeight:"100vh",
+paddingTop:"180px",
+position:"relative",
 
-minHeight:"85vh",
+background:
+"linear-gradient(135deg,#000814,#020617,#03045e)",
+
+overflow:"hidden",
 
 display:"flex",
 
-justifyContent:"center",
-
 alignItems:"center",
 
-textAlign:"center",
-
-padding:"40px",
-
-position:"relative",
-
-overflow:"hidden"
-
+justifyContent:"center"
 }}
-
 >
 
-<div
+
+{/* MOVING BLOBS */}
+
+<motion.div
+
+animate={{
+x:[0,300,-200,0],
+y:[0,-150,150,0]
+}}
+
+transition={{
+duration:20,
+repeat:Infinity
+}}
+
 style={{
 
 position:"absolute",
 
-width:"500px",
+width:"700px",
 
-height:"500px",
-
-background:"#2563eb",
-
-filter:"blur(180px)",
-
-opacity:"0.30",
+height:"700px",
 
 borderRadius:"50%",
 
-top:"-150px",
+background:
+"radial-gradient(circle,#2563eb,transparent)",
 
-left:"-150px"
+filter:"blur(150px)",
+
+opacity:.45
 
 }}
 />
 
 
-<div
+<motion.div
+
+animate={{
+x:[0,-250,200,0],
+y:[0,250,-150,0]
+}}
+
+transition={{
+duration:18,
+repeat:Infinity
+}}
+
 style={{
 
 position:"absolute",
 
-width:"450px",
+width:"600px",
 
-height:"450px",
-
-background:"#8b5cf6",
-
-filter:"blur(180px)",
-
-opacity:"0.25",
+height:"600px",
 
 borderRadius:"50%",
 
-bottom:"-120px",
+background:
+"radial-gradient(circle,#9333ea,transparent)",
 
-right:"-120px"
+filter:"blur(140px)",
+
+opacity:.4
 
 }}
 />
 
 
 
-<div
+<motion.div
+
+initial={{
+opacity:0,
+y:80
+}}
+
+animate={{
+opacity:1,
+y:0
+}}
+
+transition={{
+duration:1.5
+}}
+
 style={{
-
-maxWidth:"900px",
-
-zIndex:"2"
-
+zIndex:2,
+textAlign:"center"
 }}
 
 >
-
-<p
-style={{
-
-fontSize:"22px",
-
-color:"#8b5cf6",
-
-letterSpacing:"4px"
-
-}}
-
->
-
-PROJECT HUB
-
-</p>
 
 
 
 <h1
+
 style={{
 
-fontSize:
-
-window.innerWidth<768
-
-?
-
-"58px"
-
-:
-
-"95px",
+fontSize:"clamp(60px,10vw,140px)",
 
 lineHeight:"1",
 
+marginBottom:"40px",
+
 fontWeight:"900",
 
-marginTop:"20px"
-
-}}
-
->
-
-Engineering Projects
-
-<br/>
-
-<span
-style={{
-
 background:
-
-"linear-gradient(90deg,#2563eb,#8b5cf6)",
+"linear-gradient(90deg,#2563eb,#9333ea)",
 
 WebkitBackgroundClip:"text",
 
-color:"transparent"
+color:"transparent",
+
+textAlign:"center"
 
 }}
 
 >
 
-For Every Year
-
-</span>
+Engineering
+<br/>
+Projects
 
 </h1>
-
 
 
 <p
 style={{
 
-marginTop:"35px",
+color:"#94a3b8",
 
-fontSize:
+fontSize:"22px",
 
-window.innerWidth<768
+maxWidth:"900px",
 
-?
-
-"20px"
-
-:
-
-"28px",
-
-color:"#9ca3af",
+margin:"auto",
 
 lineHeight:"1.8"
 
 }}
 
+
 >
 
-Mini Projects • Final Year
-
-<br/>
-
-Source Code • PPT • Documentation
+Mini Projects • Final Year • Source Code • PPT
 
 </p>
 
 
-
-<p
+<div
 style={{
+marginTop:"80px",
 
-marginTop:"60px",
+display:"flex",
 
-fontSize:"22px",
+gap:"25px",
 
-color:"#7c83a5"
-
+justifyContent:"center"
 }}
+>
+
+<button
+
+onClick={()=>
+document
+.getElementById("projects")
+.scrollIntoView()
+}
+
+style={btn1}
 
 >
 
-Explore Projects • Pricing • Contact
+View Projects
 
-</p>
+</button>
+
+
+<button
+
+onClick={()=>
+document
+.getElementById("contact")
+.scrollIntoView()
+}
+
+style={btn2}
+
+>
+
+Contact
+
+</button>
 
 </div>
+
+</motion.div>
 
 </section>
 
 )
 
+}
+
+const btn1={
+
+padding:"20px 45px",
+
+border:"none",
+
+borderRadius:"18px",
+
+fontSize:"20px",
+
+background:
+"linear-gradient(90deg,#2563eb,#9333ea)",
+
+color:"white",
+
+cursor:"pointer"
+}
+
+const btn2={
+
+padding:"20px 45px",
+
+border:"1px solid #7c3aed",
+
+borderRadius:"18px",
+
+fontSize:"20px",
+
+background:"transparent",
+
+color:"white",
+
+cursor:"pointer"
 }
 
 export default Hero

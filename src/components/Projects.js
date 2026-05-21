@@ -1,37 +1,56 @@
 function Projects() {
 
-const mobile = window.innerWidth < 768;
-
 const projects = [
 
-"AI Resume Screening",
+{
+name:"AI Resume Screening",
+desc:
+"Automatically filters resumes using AI and ranks candidates."
+},
 
-"Student Performance Prediction",
+{
+name:"Student Performance Prediction",
+desc:
+"Predicts student results using machine learning."
+},
 
-"Online Voting System",
+{
+name:"College Chatbot",
+desc:
+"Smart assistant for college queries and support."
+},
 
-"Library Management",
+{
+name:"Expense Tracker",
+desc:
+"Track income, expenses and monthly reports."
+},
 
-"Attendance Management",
+{
+name:"Placement Management",
+desc:
+"Manage placements and student records."
+},
 
-"Weather Prediction",
+{
+name:"Weather Prediction",
+desc:
+"Forecast weather using historical data."
+}
 
-"Expense Tracker",
-
-"College Chatbot",
-
-"Placement Management"
-
-];
+]
 
 return (
 
 <section
+
+id="projects"
+
 style={{
 
-padding:"80px 8%",
+background:"#020617",
 
-color:"white",
+padding:"140px 0",
 
 minHeight:"100vh"
 
@@ -40,27 +59,17 @@ minHeight:"100vh"
 >
 
 <h1
+
 style={{
-
-fontSize:
-
-mobile
-
-?
-
-"58px"
-
-:
-
-"90px",
 
 textAlign:"center",
 
-marginBottom:"60px",
+fontSize:"90px",
+
+marginBottom:"100px",
 
 background:
-
-"linear-gradient(90deg,#2563eb,#8b5cf6)",
+"linear-gradient(90deg,#2563eb,#9333ea)",
 
 WebkitBackgroundClip:"text",
 
@@ -75,25 +84,19 @@ Featured Projects
 </h1>
 
 
-
 <div
+
 style={{
 
-display:"grid",
+display:"flex",
 
-gridTemplateColumns:
+flexDirection:"column",
 
-mobile
+gap:"40px",
 
-?
+maxWidth:"900px",
 
-"1fr"
-
-:
-
-"repeat(3,1fr)",
-
-gap:"35px"
+margin:"auto"
 
 }}
 
@@ -101,40 +104,38 @@ gap:"35px"
 
 {
 
-projects.map(
-
-(project)=>(
+projects.map((p,index)=>(
 
 <div
 
-key={project}
+key={index}
 
 style={{
 
 background:
-
-"rgba(255,255,255,.04)",
+"linear-gradient(180deg,#071028,#0b1435)",
 
 padding:"50px",
 
 borderRadius:"35px",
 
-backdropFilter:"blur(25px)",
+border:
+"1px solid rgba(255,255,255,.08)",
 
 boxShadow:
-
-"0 0 60px rgba(99,102,241,.2)",
-
-textAlign:"center"
+"0 0 80px rgba(37,99,235,.12)"
 
 }}
 
 >
 
 <div
+
 style={{
 
-fontSize:"60px"
+fontSize:"50px",
+
+marginBottom:"10px"
 
 }}
 
@@ -144,176 +145,162 @@ fontSize:"60px"
 
 </div>
 
-<br/>
 
 <h2
+
 style={{
 
-fontSize:"26px"
+color:"white",
+
+fontSize:"36px",
+
+marginBottom:"20px"
 
 }}
 
 >
 
-{project}
+{p.name}
 
 </h2>
-
-</div>
-
-)
-
-)
-
-}
-
-
-
-<div
-style={{
-
-background:
-
-"linear-gradient(135deg,#2563eb,#8b5cf6)",
-
-padding:"50px",
-
-borderRadius:"35px",
-
-textAlign:"center",
-
-boxShadow:
-
-"0 0 90px rgba(99,102,241,.55)"
-
-}}
-
->
-
-<h1
-style={{
-
-fontSize:"80px"
-
-}}
-
->
-
-+
-
-</h1>
-
-
-
-<h2
-style={{
-
-fontSize:"36px"
-
-}}
-
->
-
-Many More Projects
-
-</h2>
-
-
-<br/>
 
 
 <p
+
 style={{
 
-lineHeight:"2",
+color:"#94a3b8",
 
-fontSize:"18px"
+fontSize:"20px",
+
+lineHeight:"1.8"
 
 }}
 
 >
 
-Web Development
-
-<br/>
-
-Java
-
-<br/>
-
-Python
-
-<br/>
-
-AI / ML
-
-<br/>
-
-Cloud
-
-<br/>
-
-IoT
-
-<br/>
-
-Android
-
-<br/>
-
-Cyber Security
-
-<br/>
-
-And More...
+{p.desc}
 
 </p>
 
 
-<br/>
 
+<div
+
+style={{
+
+marginTop:"40px"
+
+}}
+
+>
 
 <button
 
 onClick={()=>{
 
-window.location.href="/contact"
+alert(
+
+`${p.name}
+
+This project includes:
+
+• Source Code
+
+• PPT
+
+• Documentation
+
+
+For more information or your own project requirements contact owner.`
+
+)
 
 }}
 
 style={{
 
-padding:"18px 35px",
+padding:"18px 40px",
 
 border:"none",
 
-borderRadius:"18px",
+borderRadius:"20px",
 
-background:"white",
+background:
+"linear-gradient(90deg,#2563eb,#9333ea)",
+
+color:"white",
 
 fontSize:"18px",
 
-cursor:"pointer",
-
-boxShadow:
-
-"0 0 40px rgba(255,255,255,.35)"
+cursor:"pointer"
 
 }}
 
 >
 
-For More Projects
-
-<br/>
-
-Contact Now →
+View
 
 </button>
 
+</div>
 
 </div>
 
+))
+
+}
+
+</div>
+
+
+
+<div
+
+style={{
+
+textAlign:"center",
+
+marginTop:"120px"
+
+}}
+
+>
+
+<h2
+
+style={{
+
+color:"white",
+
+fontSize:"50px"
+
+}}
+
+>
+
+Need More Projects?
+
+</h2>
+
+
+<p
+
+style={{
+
+color:"#94a3b8",
+
+fontSize:"22px",
+
+marginTop:"20px"
+
+}}
+
+>
+
+For more information or your own project requirements contact owner.
+
+</p>
 
 </div>
 

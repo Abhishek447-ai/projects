@@ -1,234 +1,163 @@
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react"
 
 function Navbar(){
 
-const mobile = window.innerWidth < 768;
+const [scroll,setScroll]=useState(false)
+
+useEffect(()=>{
+
+const handle=()=>{
+
+setScroll(window.scrollY>100)
+
+}
+
+window.addEventListener("scroll",handle)
+
+return()=>window.removeEventListener("scroll",handle)
+
+},[])
 
 return(
 
 <nav
+
 style={{
+
+position:"fixed",
+
+top:scroll?"15px":"30px",
+
+left:"50%",
+
+transform:"translateX(-50%)",
 
 display:"flex",
 
-flexDirection:
+gap:"12px",
 
-mobile
+zIndex:999,
 
-?
+padding:scroll?"8px":"0",
 
-"column"
-
-:
-
-"row",
-
-justifyContent:"space-between",
-
-alignItems:"center",
-
-padding:
-
-mobile
-
-?
-
-"20px"
-
-:
-
-"25px 8%",
-
-gap:
-
-mobile
-
-?
-
-"20px"
-
-:
-
-"0",
-
-position:"sticky",
-
-top:"0",
-
-zIndex:"999",
+borderRadius:"999px",
 
 background:
+scroll
+?"rgba(5,10,30,.75)"
+:"transparent",
 
-"rgba(10,15,40,.45)",
+backdropFilter:
+scroll
+?"blur(18px)"
+:"none",
 
-backdropFilter:"blur(20px)",
-
-borderBottom:
-
-"1px solid rgba(255,255,255,.08)"
-
-}}
-
->
-
-<h1
-style={{
-
-fontSize:
-
-mobile
-
-?
-
-"42px"
-
-:
-
-"58px",
-
-background:
-
-"linear-gradient(90deg,#2563eb,#8b5cf6)",
-
-WebkitBackgroundClip:"text",
-
-color:"transparent",
-
-fontWeight:"900"
+transition:"0.4s"
 
 }}
 
 >
 
-ProjectHub
+<Button title="Home" click={()=>window.scrollTo({
+top:0,
+behavior:"smooth"
+})}/>
 
-</h1>
-
-
-<div
-style={{
-
-display:"flex",
-
-flexWrap:"wrap",
-
-justifyContent:"center",
-
-gap:"14px"
-
-}}
-
->
-
-{
-
-[
-
-["/","Home"],
-
-["/projects","Projects"],
-
-["/pricing","Pricing"]
-
-].map(
-
-([path,name])=>(
-
-<Link
-
-key={name}
-
-to={path}
-
-style={{
-
-padding:
-
-mobile
-
-?
-
-"12px 18px"
-
-:
-
-"14px 24px",
-
-borderRadius:"16px",
-
-background:
-
-"rgba(255,255,255,.05)",
-
-color:"white",
-
-boxShadow:
-
-"0 0 25px rgba(99,102,241,.25)"
-
-}}
-
->
-
-{name}
-
-</Link>
-
-)
-
-)
-
+<Button
+title="Projects"
+click={()=>
+document
+.getElementById("projects")
+.scrollIntoView({
+behavior:"smooth"
+})
 }
+/>
 
+<Button
+title="Pricing"
+click={()=>
+document
+.getElementById("pricing")
+.scrollIntoView({
+behavior:"smooth"
+})
+}
+/>
 
+<Button
+title="✨ Contact"
 
-<Link to="/contact">
+contact
 
-<button
-style={{
-
-padding:
-
-mobile
-
-?
-
-"12px 20px"
-
-:
-
-"16px 32px",
-
-border:"none",
-
-borderRadius:"18px",
-
-background:
-
-"linear-gradient(90deg,#2563eb,#8b5cf6)",
-
-color:"white",
-
-boxShadow:
-
-"0 0 40px rgba(99,102,241,.6)"
-
-}}
-
->
-
-✨ Contact
-
-</button>
-
-</Link>
-
-</div>
+click={()=>
+document
+.getElementById("contact")
+.scrollIntoView({
+behavior:"smooth"
+})
+}
+/>
 
 </nav>
 
 )
 
 }
+
+
+
+function Button({
+
+title,
+
+click,
+
+contact
+
+}){
+
+return(
+
+<button
+
+onClick={click}
+
+style={{
+
+padding:"12px 22px",
+
+border:"none",
+
+borderRadius:"999px",
+
+fontSize:"16px",
+
+cursor:"pointer",
+
+color:"white",
+
+background:
+contact
+?"linear-gradient(90deg,#2563eb,#9333ea)"
+:"rgba(20,20,40,.4)",
+
+backdropFilter:"blur(12px)",
+
+transition:"0.3s"
+
+}}
+
+>
+
+{title}
+
+</button>
+
+)
+
+}
+
+
 
 export default Navbar

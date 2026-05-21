@@ -1,60 +1,58 @@
 function Pricing(){
 
-const mobile = window.innerWidth < 768
-
 const plans=[
 
 {
 name:"Basic",
-price:"₹4999"
+price:"₹4999",
+features:[
+"Mini Project",
+"Source Code",
+"PPT",
+"Documentation"
+]
 },
 
 {
 name:"Standard",
-price:"₹9999"
+price:"₹8999",
+features:[
+"Final Year Project",
+"Source Code",
+"PPT",
+"Documentation"
+]
 },
 
 {
 name:"Premium",
-price:"₹14999"
+price:"₹14999",
+features:[
+"Custom Project",
+"Full Support",
+"Documentation",
+"Deployment"
+]
 }
 
 ]
 
 return(
 
-<section
+<section id="pricing"
 style={{
-
-padding:"80px 8%",
-
-color:"white",
-
-minHeight:"100vh"
-
+padding:"120px 10%",
+background:"#000814",
+color:"white"
 }}
-
 >
 
 <h1
 style={{
-
-fontSize:
-
-mobile
-
-?
-
-"58px"
-
-:
-
-"90px",
-
-marginBottom:"50px"
-
+fontSize:"80px",
+textAlign:"center",
+marginBottom:"80px"
 }}
-
 >
 
 Pricing
@@ -65,120 +63,80 @@ Pricing
 
 <div
 style={{
-
 display:"grid",
-
 gridTemplateColumns:
-
-mobile
-
-?
-
-"1fr"
-
-:
-
-"repeat(3,1fr)",
-
-gap:"30px"
-
+"repeat(auto-fit,minmax(320px,1fr))",
+gap:"40px"
 }}
-
 >
 
 {
 
-plans.map(
-
-(x)=>(
+plans.map((plan)=>(
 
 <div
-
-key={x.name}
-
+key={plan.name}
 style={{
-
 padding:"50px",
 
 borderRadius:"35px",
 
 background:
+"linear-gradient(145deg,#111827,#1e1b4b)",
 
-"linear-gradient(135deg,#111827,#3b82f6,#8b5cf6)",
+border:
+"1px solid rgba(255,255,255,.08)",
+
+textAlign:"center",
 
 boxShadow:
-
-"0 0 60px rgba(99,102,241,.35)",
-
-textAlign:"center"
-
+"0 0 80px rgba(99,102,241,.15)"
 }}
-
 >
 
-<h2
-style={{
+<h2>
 
-fontSize:"40px"
-
-}}
-
->
-
-{x.name}
+{plan.name}
 
 </h2>
 
-
 <br/>
-
 
 <h1
 style={{
+fontSize:"70px",
 
-fontSize:
+background:
+"linear-gradient(90deg,#2563eb,#9333ea)",
 
-mobile
+WebkitBackgroundClip:"text",
 
-?
-
-"62px"
-
-:
-
-"80px"
-
+color:"transparent"
 }}
-
 >
 
-{x.price}
+{plan.price}
 
 </h1>
 
-
 <br/>
 
-<p>
+{
 
-✔ Source Code
+plan.features.map(
 
-<br/>
+(f)=>(
 
-✔ Report
+<p
+key={f}
+style={{
+color:"#94a3b8"
+}}
+>
 
-<br/>
-
-✔ PPT
-
-<br/>
-
-✔ Support
+✓ {f}
 
 </p>
-
-
-</div>
 
 )
 
@@ -186,35 +144,57 @@ mobile
 
 }
 
+<br/>
+
+<button
+
+onClick={()=>{
+
+window.open(
+"https://wa.me/919535554218"
+)
+
+}}
+
+style={{
+marginTop:"20px",
+
+padding:"18px 40px",
+
+border:"none",
+
+borderRadius:"18px",
+
+background:
+"linear-gradient(90deg,#2563eb,#9333ea)",
+
+color:"white"
+}}
+>
+
+Get Project
+
+</button>
+
 </div>
+
+))
+
+}
+
+</div>
+
 
 
 <p
 style={{
-
-marginTop:"60px",
-
 textAlign:"center",
-
-color:"#9ca3af",
-
-fontSize:"20px"
-
+marginTop:"70px",
+color:"#64748b"
 }}
-
 >
 
-* Terms & Conditions Apply
-
-<br/>
-
-Pricing may vary based on project complexity,
-
-technology stack,
-
-documentation requirements,
-
-customization and support.
+Pricing may vary depending on complexity
 
 </p>
 
