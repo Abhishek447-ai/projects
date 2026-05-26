@@ -4,7 +4,7 @@
 
 --bg:#f7f4ef;
 
---surface:#ffffff;
+--surface:transparent;
 
 --primary:#c9a27c;
 
@@ -14,23 +14,17 @@
 
 --muted:#7b7268;
 
---border:rgba(201,162,124,.18);
-
---shadow:
-0 20px 60px
-rgba(0,0,0,.08);
-
 }
 
 html{
-
 scroll-behavior:smooth;
-
 }
 
 body{
 
 margin:0;
+
+overflow-x:hidden;
 
 background:
 radial-gradient(
@@ -39,46 +33,28 @@ circle at top,
 #f7f4ef
 );
 
-color:var(--text);
-
 font-family:
-
 Inter,
-
 sans-serif;
 
-overflow-x:hidden;
+}
+
+
+/* THIS IS THE FIX */
+
+section{
+
+background:
+transparent
+!important;
 
 }
 
-.glass{
+/* ALL BLOCKS TRANSPARENT */
 
-backdrop-filter:
+div{
 
-blur(30px);
-
-background:
-
-rgba(255,255,255,.45);
-
-border:
-
-1px solid var(--border);
-
-}
-
-.hero-text{
-
-background:
-
-linear-gradient(
-135deg,
-#3f352b,
-#c9a27c
-);
-
--webkit-background-clip:text;
-
-color:transparent;
+background-color:
+transparent;
 
 }

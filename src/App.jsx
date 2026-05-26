@@ -7,43 +7,96 @@ import Pricing from "./components/sections/Pricing"
 import Contact from "./components/sections/Contact"
 import Footer from "./components/layout/Footer"
 import Videos from "./components/sections/Videos"
+
 import risingBg from "./assets/bg.png"
 
-export default function App() {
-  return (
-    <>
-      {/* ── Global rising sun background — fixed, visible entire page ── */}
-      <img
-        src={risingBg}
-        alt=""
-        aria-hidden="true"
-        style={{ mixBlendMode: "multiply" }}
-        className="
-          fixed
-          bottom-0
-          left-1/2 -translate-x-1/2
-          w-[95%] md:w-[70%] lg:w-[55%]
-          max-w-[950px]
-          object-contain
-          opacity-[0.12]
-          pointer-events-none
-          select-none
-          z-0
-        "
-      />
+export default function App(){
 
-      {/* ── All sections sit above the sun ── */}
-      <div className="relative z-10">
-        <Navbar />
-        <Hero />
-        <Stats />
-        <Services />
-        <Projects />
-        <Videos />
-        <Pricing />
-        <Contact />
-        <Footer />
-      </div>
-    </>
-  )
+return(
+
+<div
+className="
+relative
+min-h-screen
+overflow-x-hidden
+"
+>
+
+{/* SUN */}
+
+<div
+className="
+fixed
+inset-0
+
+flex
+items-end
+justify-center
+
+translate-y-[140px]
+md:translate-y-[170px]
+
+
+pointer-events-none
+
+z-0
+"
+>
+
+<img
+
+src={risingBg}
+
+alt=""
+
+className="
+w-[2200px]
+
+opacity-[0.22]
+
+object-contain
+"
+
+style={{
+mixBlendMode:"multiply"
+}}
+
+/>
+
+</div>
+
+
+{/* WEBSITE */}
+
+<div
+className="
+relative
+z-20
+"
+>
+
+<Navbar/>
+
+<Hero/>
+
+<Stats/>
+
+<Services/>
+
+<Projects/>
+
+<Videos/>
+
+<Pricing/>
+
+<Contact/>
+
+<Footer/>
+
+</div>
+
+</div>
+
+)
+
 }
