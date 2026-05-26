@@ -33,8 +33,10 @@ flex
 items-end
 justify-center
 
-translate-y-[140px]
+translate-y-[260px]
+
 md:translate-y-[170px]
+
 
 
 pointer-events-none
@@ -50,7 +52,13 @@ src={risingBg}
 alt=""
 
 className="
-w-[2200px]
+w-[700px]
+
+sm:w-[850px]
+
+md:w-[1400px]
+
+lg:w-[2200px]
 
 opacity-[0.22]
 
