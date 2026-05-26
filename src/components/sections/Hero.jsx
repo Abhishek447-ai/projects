@@ -1,6 +1,5 @@
 import { motion } from "framer-motion"
 import sun from "../../assets/sun.png"
-import risingBg from "../../assets/sun.png" // 👈 replace with your actual rising sun image path e.g. "../../assets/rising-sun.png"
 
 export default function Hero() {
   return (
@@ -15,24 +14,6 @@ export default function Hero() {
     >
       {/* ── Base gradient background ── */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#fff8ef,#f7f4ef)]" />
-
-      {/* ── Rising sun background image (low opacity) ── */}
-      <img
-        src={risingBg}
-        alt=""
-        aria-hidden="true"
-        className="
-          absolute
-          bottom-0
-          left-1/2 -translate-x-1/2
-          w-[90%] md:w-[70%] lg:w-[55%]
-          max-w-[900px]
-          object-contain
-          opacity-[0.08]
-          pointer-events-none
-          select-none
-        "
-      />
 
       {/* ── Decorative blobs ── */}
       <div
