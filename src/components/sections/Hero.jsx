@@ -9,11 +9,13 @@ return (
 className="
 relative
 
-min-h-screen
+min-h-[80vh]
+md:min-h-screen
 
 flex
 items-center
-justify-center
+justify-start
+md:justify-center
 
 overflow-hidden
 
@@ -87,7 +89,7 @@ mx-auto
 
 text-center
 
-pt-[140px]
+pt-[70px]
 md:pt-28
 "
 >
