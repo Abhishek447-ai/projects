@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import sun from "../../assets/sun.png"
+import risingBg from "../../assets/sun.png" // 👈 replace with your actual rising sun image path e.g. "../../assets/rising-sun.png"
 
 export default function Hero() {
   return (
@@ -12,9 +13,28 @@ export default function Hero() {
         px-5 md:px-6
       "
     >
-      {/* Backgrounds */}
+      {/* ── Base gradient background ── */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#fff8ef,#f7f4ef)]" />
 
+      {/* ── Rising sun background image (low opacity) ── */}
+      <img
+        src={risingBg}
+        alt=""
+        aria-hidden="true"
+        className="
+          absolute
+          bottom-0
+          left-1/2 -translate-x-1/2
+          w-[90%] md:w-[70%] lg:w-[55%]
+          max-w-[900px]
+          object-contain
+          opacity-[0.08]
+          pointer-events-none
+          select-none
+        "
+      />
+
+      {/* ── Decorative blobs ── */}
       <div
         className="
           absolute top-[-150px] left-[-150px]
@@ -24,7 +44,6 @@ export default function Hero() {
           opacity-40 bg-[var(--primary)]
         "
       />
-
       <div
         className="
           absolute right-[-150px] bottom-[-150px]
@@ -35,7 +54,7 @@ export default function Hero() {
         "
       />
 
-      {/* Content */}
+      {/* ── Content ── */}
       <div
         className="
           relative w-full max-w-7xl mx-auto
@@ -51,7 +70,7 @@ export default function Hero() {
         >
           <div className="flex flex-col items-center">
 
-            {/* "Rising S☀️N" */}
+            {/* "Rising S☀N" */}
             <h1
               className="
                 font-black
