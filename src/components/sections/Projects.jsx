@@ -155,7 +155,7 @@ font-semibold
 "
 >
 
-View →
+
 
 </button>
 
