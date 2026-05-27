@@ -12,16 +12,26 @@ import risingBg from "./assets/bg.png"
 export default function App() {
   return (
     <>
-      {/* Fixed sun — always centered in viewport, behind everything */}
+      {/* Sun fixed to CENTER of viewport — always visible on every section */}
       <img
         src={risingBg}
         alt=""
         aria-hidden="true"
-        className="fixed bottom-0 left-1/2 -translate-x-1/2 w-[110%] md:w-[70%] lg:w-[55%] max-w-[900px] object-contain opacity-20 pointer-events-none select-none"
+        className="
+          fixed
+          top-1/2 left-1/2
+          -translate-x-1/2 -translate-y-1/2
+          w-[120%] md:w-[70%] lg:w-[55%]
+          max-w-[900px]
+          object-contain
+          opacity-20
+          pointer-events-none
+          select-none
+        "
         style={{ zIndex: 0 }}
       />
 
-      {/* All content above the sun */}
+      {/* All content above sun */}
       <div style={{ position: "relative", zIndex: 1 }}>
         <Navbar />
         <Hero />
