@@ -13,7 +13,7 @@ export default function App() {
   return (
     <div className="relative min-h-screen">
 
-      {/* ── Sun watermark ── */}
+      {/* ── Sun watermark — NO blend mode, just opacity ── */}
       <div
         className="absolute inset-0 pointer-events-none overflow-hidden"
         style={{ zIndex: 0 }}
@@ -22,15 +22,14 @@ export default function App() {
           src={risingBg}
           alt=""
           aria-hidden="true"
-          style={{ mixBlendMode: "multiply" }}
           className="
             sticky
-            top-[30vh]
+            top-[25vh]
             left-1/2 -translate-x-1/2
-            w-[90%] md:w-[65%] lg:w-[55%]
-            max-w-[900px]
+            w-[90%] md:w-[60%] lg:w-[50%]
+            max-w-[850px]
             object-contain
-            opacity-[0.25]
+            opacity-30
             pointer-events-none
             select-none
             block
