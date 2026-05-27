@@ -27,6 +27,9 @@ export default function Pricing() {
           ))}
         </div>
       </div>
+      <p className="mt-10 text-center text-[var(--muted)] text-sm tracking-wide">
+  * Prices may vary based on project requirements and complexity.
+</p>
     </section>
   )
 }
