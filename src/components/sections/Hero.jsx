@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import sun from "../../assets/sun.png"
+import bgSun from "../../assets/bg.png"
 
 export default function Hero() {
   return (
@@ -10,13 +11,34 @@ export default function Hero() {
         flex items-center justify-center
         overflow-hidden
         px-5 md:px-6
-        
       "
     >
+      {/* Base gradient */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#fff8ef,#f7f4ef)]" />
+
+      {/* BG Sun watermark — inside hero */}
+      <img
+        src={bgSun}
+        alt=""
+        aria-hidden="true"
+        className="
+          absolute
+          bottom-[-60px]
+          left-1/2 -translate-x-1/2
+          w-[85%] sm:w-[60%] md:w-[55%]
+          max-w-[750px]
+          object-contain
+          opacity-20
+          pointer-events-none
+          select-none
+        "
+      />
+
+      {/* Decorative blobs */}
       <div className="absolute top-[-150px] left-[-150px] w-[300px] md:w-[600px] h-[300px] md:h-[600px] rounded-full blur-[120px] md:blur-[180px] opacity-40 bg-[var(--primary)]" />
       <div className="absolute right-[-150px] bottom-[-150px] w-[300px] md:w-[650px] h-[300px] md:h-[650px] rounded-full blur-[120px] md:blur-[200px] bg-[#f2e7d8] opacity-60" />
 
+      {/* Content */}
       <div className="relative w-full max-w-7xl mx-auto text-center pt-[72px] md:pt-28 px-4">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
