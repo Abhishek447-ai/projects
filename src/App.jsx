@@ -7,104 +7,46 @@ import Pricing from "./components/sections/Pricing"
 import Contact from "./components/sections/Contact"
 import Footer from "./components/layout/Footer"
 import Videos from "./components/sections/Videos"
-
 import risingBg from "./assets/bg.png"
 
-export default function App(){
+export default function App() {
+  return (
+    <>
+      {/* ── Sun fixed to bottom of viewport always ── */}
+      <img
+        src={risingBg}
+        alt=""
+        aria-hidden="true"
+        style={{ mixBlendMode: "multiply" }}
+        className="
+          fixed
+          bottom-0
+          left-1/2 -translate-x-1/2
+          w-[95%] md:w-[70%] lg:w-[55%]
+          max-w-[950px]
+          object-contain
+          opacity-[0.22]
+          pointer-events-none
+          select-none
+          z-0
+        "
+      />
 
-return(
-
-<div
-className="
-relative
-min-h-screen
-overflow-x-hidden
-"
->
-
-{/* SUN */}
-
-<div
-className="
-fixed
-inset-0
-
-flex
-items-end
-justify-center
-
-translate-y-[260px]
-
-md:translate-y-[170px]
-
-
-
-pointer-events-none
-
-z-0
-"
->
-
-<img
-
-src={risingBg}
-
-alt=""
-
-className="
-w-[700px]
-
-sm:w-[850px]
-
-md:w-[1400px]
-
-lg:w-[2200px]
-
-opacity-[0.22]
-
-object-contain
-"
-
-style={{
-mixBlendMode:"multiply"
-}}
-
-/>
-
-</div>
-
-
-{/* WEBSITE */}
-
-<div
-className="
-relative
-z-20
-"
->
-
-<Navbar/>
-
-<Hero/>
-
-<Stats/>
-
-<Services/>
-
-<Projects/>
-
-<Videos/>
-
-<Pricing/>
-
-<Contact/>
-
-<Footer/>
-
-</div>
-
-</div>
-
-)
-
+      {/* ── Sections each have solid bg so sun only shows through the LAST section / footer ── */}
+      <div className="relative z-10">
+        <Navbar />
+        <main>
+          <Hero />
+          <Stats />
+          <Services />
+          <Projects />
+          <Videos />
+          <Pricing />
+          <Contact />
+        </main>
+        {/* Footer has no bg so sun shines through at the bottom */}
+        <Footer />
+      </div>
+    </>
+  )
 }
