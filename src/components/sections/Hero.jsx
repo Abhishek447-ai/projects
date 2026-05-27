@@ -36,7 +36,7 @@ export default function Hero() {
                 tracking-tight
                 text-[#5e4d3f]
                 whitespace-nowrap
-                text-[11.5vw] sm:text-[10vw] md:text-[8.25rem]
+                text-[15vw] sm:text-[10vw] md:text-[8.25rem]
               "
             >
               Rising{" "}
@@ -47,7 +47,7 @@ export default function Hero() {
                   alt="sun"
                   className="
                     inline-block
-                    w-[7.5vw] sm:w-[7vw] md:w-[5.9rem]
+                    w-[10vw] sm:w-[7vw] md:w-[5.9rem]
                     mx-[-1px] md:mx-[-5px]
                     translate-y-[1px]
                     object-contain
@@ -64,7 +64,7 @@ export default function Hero() {
                 leading-none
                 mt-0 md:mt-[-8px]
                 whitespace-nowrap
-                text-[13vw] sm:text-[11vw] md:text-[8.5rem]
+                text-[16vw] sm:text-[11vw] md:text-[8.5rem]
               "
             >
               Tech Hub
