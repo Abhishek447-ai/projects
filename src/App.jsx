@@ -13,7 +13,7 @@ export default function App() {
   return (
     <div className="relative min-h-screen">
 
-      {/* ── Sun watermark — sticky so it travels with scroll ── */}
+      {/* ── Sun watermark ── */}
       <div
         className="absolute inset-0 pointer-events-none overflow-hidden"
         style={{ zIndex: 0 }}
@@ -25,12 +25,12 @@ export default function App() {
           style={{ mixBlendMode: "multiply" }}
           className="
             sticky
-            top-[50vh]
+            top-[30vh]
             left-1/2 -translate-x-1/2
-            w-[65%] md:w-[40%] lg:w-[35%]
-            max-w-[580px]
+            w-[90%] md:w-[65%] lg:w-[55%]
+            max-w-[900px]
             object-contain
-            opacity-[0.09]
+            opacity-[0.25]
             pointer-events-none
             select-none
             block
