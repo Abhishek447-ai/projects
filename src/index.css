@@ -1,60 +1,28 @@
 @import "tailwindcss";
 
-:root{
-
---bg:#f7f4ef;
-
---surface:transparent;
-
---primary:#c9a27c;
-
---accent:#e4d3be;
-
---text:#181614;
-
---muted:#7b7268;
-
+:root {
+  --bg: #f7f4ef;
+  --surface: transparent;
+  --primary: #c9a27c;
+  --accent: #e4d3be;
+  --text: #181614;
+  --muted: #7b7268;
 }
 
-html{
-scroll-behavior:smooth;
+html {
+  scroll-behavior: smooth;
 }
 
-body{
-
-margin:0;
-
-overflow-x:hidden;
-
-background:
-radial-gradient(
-circle at top,
-#fdf8f2,
-#f7f4ef
-);
-
-font-family:
-Inter,
-sans-serif;
-
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: radial-gradient(circle at top, #fdf8f2, #f7f4ef);
+  font-family: Inter, sans-serif;
 }
 
-
-/* THIS IS THE FIX */
-
-section{
-
-background:
-transparent
-!important;
-
-}
-
-/* ALL BLOCKS TRANSPARENT */
-
-div{
-
-background-color:
-transparent;
-
+/* Block the fixed sun from showing through mid-page sections */
+section {
+  background-color: #f7f4ef !important;
+  position: relative;
+  z-index: 10;
 }
