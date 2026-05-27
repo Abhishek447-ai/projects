@@ -1,3 +1,4 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Navbar from "./components/layout/Navbar"
 import Hero from "./components/sections/Hero"
 import Stats from "./components/sections/Stats"
@@ -7,12 +8,27 @@ import Pricing from "./components/sections/Pricing"
 import Contact from "./components/sections/Contact"
 import Footer from "./components/layout/Footer"
 import Videos from "./components/sections/Videos"
+import TermsAndConditions from "./components/sections/TermsAndConditions"
 import risingBg from "./assets/bg.png"
+
+function MainPage() {
+  return (
+    <>
+      <Hero />
+      <Stats />
+      <Services />
+      <Projects />
+      <Videos />
+      <Pricing />
+      <Contact />
+    </>
+  )
+}
 
 export default function App() {
   return (
-    <>
-      {/* Sun fixed to CENTER of viewport — always visible on every section */}
+    <BrowserRouter>
+      {/* Fixed sun watermark */}
       <img
         src={risingBg}
         alt=""
@@ -31,18 +47,14 @@ export default function App() {
         style={{ zIndex: 0 }}
       />
 
-      {/* All content above sun */}
       <div style={{ position: "relative", zIndex: 1 }}>
         <Navbar />
-        <Hero />
-        <Stats />
-        <Services />
-        <Projects />
-        <Videos />
-        <Pricing />
-        <Contact />
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/terms" element={<TermsAndConditions />} />
+        </Routes>
         <Footer />
       </div>
-    </>
+    </BrowserRouter>
   )
 }
