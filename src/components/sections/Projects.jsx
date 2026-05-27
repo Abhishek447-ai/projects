@@ -33,6 +33,7 @@ export default function Projects() {
           ))}
         </div>
       </div>
+      <p> charges may vary based on the Project requirments </p>
     </section>
   )
 }
