@@ -11,35 +11,18 @@ import risingBg from "./assets/bg.png"
 
 export default function App() {
   return (
-    <div className="relative min-h-screen">
-
-      {/* ── Sun watermark — NO blend mode, just opacity ── */}
-      <div
-        className="absolute inset-0 pointer-events-none overflow-hidden"
+    <>
+      {/* Fixed sun — always centered in viewport, behind everything */}
+      <img
+        src={risingBg}
+        alt=""
+        aria-hidden="true"
+        className="fixed bottom-0 left-1/2 -translate-x-1/2 w-[110%] md:w-[70%] lg:w-[55%] max-w-[900px] object-contain opacity-20 pointer-events-none select-none"
         style={{ zIndex: 0 }}
-      >
-        <img
-          src={risingBg}
-          alt=""
-          aria-hidden="true"
-          className="
-            sticky
-            top-[25vh]
-            left-1/2 -translate-x-1/2
-            w-[90%] md:w-[60%] lg:w-[50%]
-            max-w-[850px]
-            object-contain
-            opacity-30
-            pointer-events-none
-            select-none
-            block
-            mx-auto
-          "
-        />
-      </div>
+      />
 
-      {/* ── All sections above sun ── */}
-      <div className="relative" style={{ zIndex: 1 }}>
+      {/* All content above the sun */}
+      <div style={{ position: "relative", zIndex: 1 }}>
         <Navbar />
         <Hero />
         <Stats />
@@ -50,6 +33,6 @@ export default function App() {
         <Contact />
         <Footer />
       </div>
-    </div>
+    </>
   )
 }
