@@ -13,9 +13,9 @@ export default function App() {
   return (
     <div className="relative min-h-screen">
 
-      {/* ── Sun pinned to bottom of FULL page (not viewport) ── */}
+      {/* ── Sun watermark — sticky so it travels with scroll ── */}
       <div
-        className="absolute inset-0 pointer-events-none"
+        className="absolute inset-0 pointer-events-none overflow-hidden"
         style={{ zIndex: 0 }}
       >
         <img
@@ -25,12 +25,12 @@ export default function App() {
           style={{ mixBlendMode: "multiply" }}
           className="
             sticky
-            top-[40vh]
+            top-[50vh]
             left-1/2 -translate-x-1/2
-            w-[95%] md:w-[70%] lg:w-[60%]
-            max-w-[1000px]
+            w-[65%] md:w-[40%] lg:w-[35%]
+            max-w-[580px]
             object-contain
-            opacity-[0.13]
+            opacity-[0.09]
             pointer-events-none
             select-none
             block
