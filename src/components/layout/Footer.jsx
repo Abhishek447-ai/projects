@@ -87,6 +87,13 @@ text-[var(--muted)]
 
 </div>
 
+<a 
+  href="/terms" 
+  className="text-[var(--muted)] hover:text-[var(--primary)] duration-300 text-sm underline underline-offset-4"
+>
+  Terms & Conditions
+</a>
+
 </footer>
 
 )
