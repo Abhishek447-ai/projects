@@ -9,7 +9,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="py-28 px-6 bg-[#f7f4ef]"
+      className="py-28 px-6 "
     >
       <div className="max-w-7xl mx-auto">
         <p className="text-center uppercase tracking-[10px] text-[var(--muted)]">

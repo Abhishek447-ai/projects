@@ -10,7 +10,7 @@ export default function Hero() {
         flex items-center justify-center
         overflow-hidden
         px-5 md:px-6
-        bg-[#f7f4ef]
+        
       "
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#fff8ef,#f7f4ef)]" />

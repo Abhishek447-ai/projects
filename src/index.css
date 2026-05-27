@@ -16,13 +16,12 @@ html {
 body {
   margin: 0;
   overflow-x: hidden;
-  background: radial-gradient(circle at top, #fdf8f2, #f7f4ef);
   font-family: Inter, sans-serif;
+  background-color: #f7f4ef;
 }
 
-/* Block the fixed sun from showing through mid-page sections */
 section {
-  background-color: #f7f4ef !important;
+  background: transparent;
   position: relative;
-  z-index: 10;
+  z-index: 1;
 }

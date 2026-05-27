@@ -11,42 +11,46 @@ import risingBg from "./assets/bg.png"
 
 export default function App() {
   return (
-    <>
-      {/* ── Sun fixed to bottom of viewport always ── */}
-      <img
-        src={risingBg}
-        alt=""
-        aria-hidden="true"
-        style={{ mixBlendMode: "multiply" }}
-        className="
-          fixed
-          bottom-0
-          left-1/2 -translate-x-1/2
-          w-[95%] md:w-[70%] lg:w-[55%]
-          max-w-[950px]
-          object-contain
-          opacity-[0.22]
-          pointer-events-none
-          select-none
-          z-0
-        "
-      />
+    <div className="relative min-h-screen">
 
-      {/* ── Sections each have solid bg so sun only shows through the LAST section / footer ── */}
-      <div className="relative z-10">
+      {/* ── Sun pinned to bottom of FULL page (not viewport) ── */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ zIndex: 0 }}
+      >
+        <img
+          src={risingBg}
+          alt=""
+          aria-hidden="true"
+          style={{ mixBlendMode: "multiply" }}
+          className="
+            sticky
+            top-[40vh]
+            left-1/2 -translate-x-1/2
+            w-[95%] md:w-[70%] lg:w-[60%]
+            max-w-[1000px]
+            object-contain
+            opacity-[0.13]
+            pointer-events-none
+            select-none
+            block
+            mx-auto
+          "
+        />
+      </div>
+
+      {/* ── All sections above sun ── */}
+      <div className="relative" style={{ zIndex: 1 }}>
         <Navbar />
-        <main>
-          <Hero />
-          <Stats />
-          <Services />
-          <Projects />
-          <Videos />
-          <Pricing />
-          <Contact />
-        </main>
-        {/* Footer has no bg so sun shines through at the bottom */}
+        <Hero />
+        <Stats />
+        <Services />
+        <Projects />
+        <Videos />
+        <Pricing />
+        <Contact />
         <Footer />
       </div>
-    </>
+    </div>
   )
 }

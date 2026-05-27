@@ -8,7 +8,7 @@ export default function Pricing() {
   return (
     <section
       id="pricing"
-      className="py-24 px-6 bg-[#f7f4ef]"
+      className="py-24 px-6 "
     >
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-5xl md:text-7xl font-black hero-text">
