@@ -10,17 +10,19 @@ import Footer from "./components/layout/Footer"
 import Videos from "./components/sections/Videos"
 import TermsAndConditions from "./components/sections/TermsAndConditions"
 import risingBg from "./assets/bg.png"
-
+import Products from "./components/sections/Products"
 function MainPage() {
   return (
     <>
       <Hero />
-      <Stats />
-      <Services />
-      <Projects />
-      <Videos />
-      <Pricing />
-      <Contact />
+<Stats />
+<Services />
+<Products />
+<Projects />
+<Videos />
+<Pricing />
+<Contact />
+
     </>
   )
 }

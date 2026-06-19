@@ -18,23 +18,29 @@ export default function Navbar() {
   }, [scroll])
 
   const handleNavClick = (sectionId) => {
-    setMenuOpen(false)
-    if (location.pathname !== "/") {
-      // Go to home first, then scroll to section
-      navigate("/")
-      setTimeout(() => {
-        document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" })
-      }, 300)
-    } else {
-      document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" })
-    }
+  setMenuOpen(false)
+
+  if (sectionId === "products") {
+    window.open("http://localhost:3000", "_blank")
+    return
   }
 
+  if (location.pathname !== "/") {
+    navigate("/")
+    setTimeout(() => {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" })
+    }, 300)
+  } else {
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" })
+  }
+}
+
   const navLinks = [
-    { id: "projects", label: "Projects" },
-    { id: "pricing",  label: "Pricing"  },
-    { id: "contact",  label: "Contact"  },
-  ]
+  { id: "products", label: "Products" },
+  { id: "projects", label: "Projects" },
+  { id: "pricing", label: "Pricing" },
+  { id: "contact", label: "Contact" },
+]
 
   return (
     <header
