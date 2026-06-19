@@ -22,7 +22,10 @@ export default function Navbar() {
 
  
 if (sectionId === "products") {
-  navigate("/products")
+  window.open(
+    "https://report-business-six.vercel.app/",
+    "_blank"
+  )
   return
 }
   if (location.pathname !== "/") {
