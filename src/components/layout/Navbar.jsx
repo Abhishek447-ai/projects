@@ -20,11 +20,11 @@ export default function Navbar() {
   const handleNavClick = (sectionId) => {
   setMenuOpen(false)
 
-  if (sectionId === "products") {
-    window.open("http://localhost:3000", "_blank")
-    return
-  }
-
+ 
+if (sectionId === "products") {
+  navigate("/products")
+  return
+}
   if (location.pathname !== "/") {
     navigate("/")
     setTimeout(() => {

@@ -54,6 +54,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/terms" element={<TermsAndConditions />} />
+          <Route path="/products" element={<Products />} />
         </Routes>
         <Footer />
       </div>
