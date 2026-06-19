@@ -20,11 +20,16 @@ export default function Products() {
           </p>
 
           <button
-            onClick={() => window.open("/student-form", "_blank")}
-            className="px-6 py-3 rounded-xl bg-[var(--primary)] text-white"
-          >
-            Open Product
-          </button>
+  onClick={() =>
+    window.open(
+      "https://report-business-six.vercel.app/",
+      "_blank"
+    )
+  }
+  className="px-6 py-3 rounded-xl bg-[var(--primary)] text-white"
+>
+  Open Product
+</button>
         </div>
       </div>
     </section>
