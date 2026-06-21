@@ -42,6 +42,7 @@ if (sectionId === "products") {
   { id: "products", label: "Products" },
   { id: "projects", label: "Projects" },
   { id: "pricing", label: "Pricing" },
+  { id: "reviews", label: "Reviews" },
   { id: "contact", label: "Contact" },
 ]
 

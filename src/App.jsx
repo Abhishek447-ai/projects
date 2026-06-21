@@ -11,16 +11,18 @@ import Videos from "./components/sections/Videos"
 import TermsAndConditions from "./components/sections/TermsAndConditions"
 import risingBg from "./assets/bg.png"
 import Products from "./components/sections/Products"
+import Reviews from "./components/sections/Reviews"
 function MainPage() {
   return (
     <>
-      <Hero />
+<Hero />
 <Stats />
 <Services />
 <Products />
 <Projects />
 <Videos />
 <Pricing />
+<Reviews />
 <Contact />
 
     </>
