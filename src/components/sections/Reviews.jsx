@@ -8,7 +8,7 @@ export default function Reviews() {
   const [reviews, setReviews] = useState([]);
   const fetchReviews = async () => {
   try {
-    const res = await fetch("http://localhost:5000/api/reviews");
+    const res = await fetch("https://business-backend-dfxj.onrender.com/api/reviews");
     const data = await res.json();
     setReviews(data);
   } catch (error) {
@@ -27,7 +27,7 @@ useEffect(() => {
   }
 
   try {
-    const res = await fetch("http://localhost:5000/api/reviews", {
+    const res = await fetch("https://business-backend-dfxj.onrender.com/api/reviews", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
