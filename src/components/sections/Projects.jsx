@@ -1,4 +1,9 @@
+import { useState } from "react";
+
+import { useNavigate } from "react-router-dom";
 export default function Projects() {
+  
+  const navigate = useNavigate();
   const projects = [
     { title: "Startup Websites",   desc: "Modern responsive websites with premium UI." },
     { title: "Business Platforms", desc: "Scalable platforms for growing companies." },
@@ -32,8 +37,26 @@ export default function Projects() {
             </div>
           ))}
         </div>
+        <div className="mt-16">
+  <div className="glass rounded-[40px] p-12 text-center hover:-translate-y-2 duration-300">
+    <h3 className="text-4xl font-bold">
+      Build Your Project
+    </h3>
+
+    <p className="mt-6 text-lg leading-8 text-[var(--muted)] max-w-3xl mx-auto">
+      Choose your technology, share your requirements, and we'll take care of the rest.
+    </p>
+
+   <button
+  onClick={() => navigate("/register-project")}
+  className="mt-10 px-8 py-4 rounded-full bg-[var(--primary)] text-white font-semibold hover:scale-105 transition"
+>
+  🚀 Register Your Project
+</button>
+  </div>
+</div>
       </div>
-      
+    
     </section>
   )
 }

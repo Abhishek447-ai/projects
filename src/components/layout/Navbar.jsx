@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { useNavigate, useLocation } from "react-router-dom"
 
+
 export default function Navbar() {
   const [scroll, setScroll] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
