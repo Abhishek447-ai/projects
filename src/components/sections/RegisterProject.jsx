@@ -23,7 +23,7 @@ export default function RegisterProject() {
   e.preventDefault();
 
   try {
-    const res = await fetch("https://projects-blond-alpha.vercel.app", {
+   const res = await fetch("https://business-backend-dfxj.onrender.com/api/register-project", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
