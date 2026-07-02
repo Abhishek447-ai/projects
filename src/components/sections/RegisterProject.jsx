@@ -23,7 +23,7 @@ export default function RegisterProject() {
   e.preventDefault();
 
   try {
-    const res = await fetch("https://projects-blond-alpha.vercel.app/register-project", {
+    const res = await fetch("https://projects-blond-alpha.vercel.app", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
