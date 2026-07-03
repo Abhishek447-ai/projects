@@ -7,7 +7,7 @@ export default function RegisterProject() {
     email: "",
     projectTitle: "",
     language: "",
-    database: "Yes",
+    
   });
 
   const handleChange = (e) => {
@@ -34,7 +34,7 @@ export default function RegisterProject() {
     const data = await res.json();
 
     if (res.ok) {
-      alert("✅ Project Registered Successfully!\n\nOur AI has started working on your project.");
+      alert("✅ Project Registered Successfully!");
 
       setFormData({
         fullName: "",
@@ -42,7 +42,7 @@ export default function RegisterProject() {
         email: "",
         projectTitle: "",
         language: "",
-        database: "Yes",
+        
       });
     } else {
       alert(data.message || "Something went wrong");
@@ -126,35 +126,7 @@ export default function RegisterProject() {
             <option value="Flutter">Flutter</option>
           </select>
 
-          <div>
-            <label className="font-semibold block mb-3">
-              Database Required?
-            </label>
-
-            <div className="flex gap-8">
-              <label className="flex items-center gap-2">
-                <input
-                  type="radio"
-                  name="database"
-                  value="Yes"
-                  checked={formData.database === "Yes"}
-                  onChange={handleChange}
-                />
-                Yes
-              </label>
-
-              <label className="flex items-center gap-2">
-                <input
-                  type="radio"
-                  name="database"
-                  value="No"
-                  checked={formData.database === "No"}
-                  onChange={handleChange}
-                />
-                No
-              </label>
-            </div>
-          </div>
+          
 
           <button
             type="submit"
