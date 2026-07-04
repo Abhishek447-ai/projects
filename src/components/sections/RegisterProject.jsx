@@ -124,6 +124,7 @@ export default function RegisterProject() {
             <option value="Spring Boot">Spring Boot</option>
             <option value="Android">Android</option>
             <option value="Flutter">Flutter</option>
+            <option value="javascript">javascript</option>
           </select>
 
           
