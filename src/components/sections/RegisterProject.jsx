@@ -110,12 +110,13 @@ export default function RegisterProject() {
             required
           />
           <textarea
-            name="Description"
-            placeholder="Describe your project in detail..."
-            value={formData.Description}
-            onChange={handleChange}
-            required
-          />
+  name="Description"
+  placeholder="Describe your project in detail..."
+  value={formData.Description}
+  onChange={handleChange}
+  className="w-full border rounded-xl px-4 py-3 h-40 resize-none"
+  required
+/>
           <select
             name="language"
             value={formData.language}
