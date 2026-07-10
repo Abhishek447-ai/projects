@@ -9,29 +9,40 @@ module.exports = async (req, res) => {
   }
 
   try {
-    const files = req.body.files;
+    const { projectName, files } = req.body;
 
     if (!files || !Array.isArray(files)) {
       return res.status(400).json({
-        error: "files array is required"
+        error: "files array is required",
       });
     }
+
+    // Use project name as root folder
+    const rootFolder = projectName || "PROJECT";
 
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "project-"));
 
     for (const file of files) {
-      const filePath = path.join(tempDir, file.path);
+      if (!file.path || typeof file.path !== "string") continue;
+
+      const filePath = path.join(tempDir, rootFolder, file.path);
 
       fs.mkdirSync(path.dirname(filePath), {
         recursive: true,
       });
 
-      fs.writeFileSync(filePath, file.content);
+      const content = String(file.content || "")
+        .replace(/\\n/g, "\n")
+        .replace(/\\t/g, "\t")
+        .replace(/\\"/g, '"')
+        .replace(/\\\\/g, "\\");
+
+      fs.writeFileSync(filePath, content, "utf8");
     }
 
     res.setHeader(
       "Content-Disposition",
-      "attachment; filename=project.zip"
+      `attachment; filename=${rootFolder}.zip`
     );
 
     res.setHeader("Content-Type", "application/zip");
@@ -42,7 +53,8 @@ module.exports = async (req, res) => {
 
     archive.pipe(res);
 
-    archive.directory(tempDir, false);
+    // Include the project root folder in the ZIP
+    archive.directory(path.join(tempDir, rootFolder), rootFolder);
 
     await archive.finalize();
 
