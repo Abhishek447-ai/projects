@@ -24,25 +24,25 @@ function HomePage() {
       {/* Background starts after Hero */}
       <div className="relative">
 
-        <img
+     <img
   src="/background.png"
   alt=""
   className="
     fixed
     left-1/2
-    top-[58%]
+    top-[73%]
     -translate-x-1/2
     -translate-y-1/2
 
-    h-[70vh]
-    sm:h-[80vh]
-    lg:h-[90vh]
+    w-[clamp(900px,130vw,1800px)]
+    h-auto
 
-    w-auto
+    opacity-[0.25]
 
-    opacity-[0.06]
     pointer-events-none
     select-none
+    object-contain
+
     -z-10
   "
 />
