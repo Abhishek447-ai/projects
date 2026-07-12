@@ -60,13 +60,33 @@ const displayedReviews = showAll
           Reviews
         </h2>
 
-        <div className="bg-white rounded-3xl shadow-xl p-8">
+        <div className="
+backdrop-blur-xl
+bg-white/20
+border
+border-white/30
+rounded-3xl
+shadow-2xl
+p-8
+">
           <input
             type="text"
             placeholder="Your Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full border rounded-xl p-4 mb-6"
+            className="
+w-full
+rounded-xl
+border
+border-white/30
+bg-white/10
+backdrop-blur-md
+p-4
+mb-6
+outline-none
+placeholder:text-gray-500
+focus:border-[var(--primary)]
+"
           />
 
           <div className="flex gap-2 mb-6 text-4xl">
@@ -86,12 +106,37 @@ const displayedReviews = showAll
             placeholder="Write your review..."
             value={review}
             onChange={(e) => setReview(e.target.value)}
-            className="w-full border rounded-xl p-4 mb-6"
+            className="
+w-full
+rounded-xl
+border
+border-white/30
+bg-white/10
+backdrop-blur-md
+p-4
+mb-6
+outline-none
+placeholder:text-gray-500
+focus:border-[var(--primary)]
+resize-none
+"
           />
 
           <button
             onClick={handleSubmit}
-            className="bg-[var(--primary)] text-white px-8 py-4 rounded-2xl font-semibold"
+            className="
+px-8
+py-4
+rounded-2xl
+font-semibold
+bg-[var(--primary)]
+text-white
+shadow-lg
+hover:scale-105
+hover:shadow-2xl
+transition-all
+duration-300
+"
           >
             Submit Review
           </button>
@@ -100,7 +145,15 @@ const displayedReviews = showAll
             {displayedReviews.map((item, index) => (
               <div
                 key={index}
-                className="bg-white rounded-3xl shadow-xl p-6"
+                className="
+rounded-3xl
+border
+border-white/30
+bg-white/15
+backdrop-blur-lg
+shadow-xl
+p-6
+"
               >
                 <div className="text-2xl mb-2">
                   {"⭐".repeat(item.rating)}
