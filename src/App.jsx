@@ -18,15 +18,52 @@ function HomePage() {
   return (
     <>
       <Navbar />
+
       <Hero />
-      <Stats />
-      <Services />
-      <Products />
-      <Projects />
-      <Videos />
-      <Pricing />
-      <Reviews />
-      <Contact />
+
+      {/* Background starts after Hero */}
+      <div className="relative">
+
+        <img
+  src="/background.png"
+  alt=""
+  className="
+    fixed
+    left-1/2
+    top-[58%]
+    -translate-x-1/2
+    -translate-y-1/2
+
+    w-[280px]
+    sm:w-[420px]
+    md:w-[650px]
+    lg:w-[850px]
+    xl:w-[1050px]
+    2xl:w-[1200px]
+
+    opacity-[0.05]
+    md:opacity-[0.07]
+    lg:opacity-[0.09]
+
+    pointer-events-none
+    select-none
+    -z-10
+  "
+/>
+
+        <div className="relative z-10">
+          <Stats />
+          <Services />
+          <Products />
+          <Projects />
+          <Videos />
+          <Pricing />
+          <Reviews />
+          <Contact />
+        </div>
+
+      </div>
+
       <Footer />
     </>
   );
