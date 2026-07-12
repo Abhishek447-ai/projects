@@ -34,17 +34,13 @@ function HomePage() {
     -translate-x-1/2
     -translate-y-1/2
 
-    w-[280px]
-    sm:w-[420px]
-    md:w-[650px]
-    lg:w-[850px]
-    xl:w-[1050px]
-    2xl:w-[1200px]
+    h-[70vh]
+    sm:h-[80vh]
+    lg:h-[90vh]
 
-    opacity-[0.05]
-    md:opacity-[0.07]
-    lg:opacity-[0.09]
+    w-auto
 
+    opacity-[0.06]
     pointer-events-none
     select-none
     -z-10
