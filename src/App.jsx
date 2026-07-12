@@ -30,14 +30,17 @@ function HomePage() {
   className="
     fixed
     left-1/2
-    top-[73%]
+    top-[55%]
+    md:top-[60%]
     -translate-x-1/2
     -translate-y-1/2
 
-    w-[clamp(400px,95vw,1800px)]
+    w-[120vw]
+    md:w-[clamp(300px,75vw,1800px)]
     h-auto
 
-    opacity-[0.25]
+    opacity-[0.20]
+    md:opacity-[0.15]
 
     pointer-events-none
     select-none
