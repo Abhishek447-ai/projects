@@ -34,7 +34,7 @@ function HomePage() {
     -translate-x-1/2
     -translate-y-1/2
 
-    w-[clamp(900px,130vw,1800px)]
+    w-[clamp(400px,95vw,1800px)]
     h-auto
 
     opacity-[0.25]
