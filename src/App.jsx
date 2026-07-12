@@ -40,7 +40,7 @@ function HomePage() {
     h-auto
 
     opacity-[0.20]
-    md:opacity-[0.15]
+    md:opacity-[0.22]
 
     pointer-events-none
     select-none
